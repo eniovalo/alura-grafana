@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+     - grafana-data:/var/lib/grafana
+    networks:
+      - grafana-net
+  influxdb:
+    image: influxdb:1.0
+    ports:
+      - 8083:8083 #Leitura
+      - 8086:8086 # Injeção dos dados
+      - 25826:25826 # Injeção dos dados
+    volumes:
+     - influxdb-data:/var/lib/influxdb
+    networks:
+      - grafana-net
+
+volumes:
+  grafana-data: {}
+  influxdb-data: {}
+
+networks:
+  grafana-net:
