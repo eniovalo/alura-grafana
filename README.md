@@ -1,6 +1,8 @@
 # alura-grafana
 Aula da Alura sobre Grafana.
 
+![Grafana do Projeto](Grafana.png)
+
 ## Programas utilizados
 - Grafana (Container, Interface para visualização dos dados).
 - InfluxDB (Container, Banco de Dados das métricas).
@@ -104,7 +106,14 @@ Aula da Alura sobre Grafana.
 ### Observar infra dos containers Docker
 - Permitir o Telegraf observar os containers `sudo usermod -aG docker telegraf`.
 - Alterar o arquivo de configuração do Telegraf `sudo gedit /etc/telegraf/telegraf.conf`.
-    - Descomentar as linhas do `inputs.docker` , `endpoint` , `container_names` , `container_name_include` , `container_name_exclude` , `timeout` , `total` .
+    - Descomentar as linhas:
+      - `inputs.docker`
+      - `endpoint`
+      - `container_names`
+      - `container_name_include`
+      - `container_name_exclude`
+      - `timeout`
+      - `total`
 - Reiniciar o serviço do Telegraf `sudo service telegraf restart`.
 - Verificar se o serviço está rodando `sudo service telegraf status`.
 
@@ -150,7 +159,13 @@ Aula da Alura sobre Grafana.
 ### Observar log do Apache
 - Permitir o Telegraf observar o log do apache `sudo usermod -aG adm telegraf`.
 - Alterar o arquivo de configuração do Telegraf `sudo gedit /etc/telegraf/telegraf.conf`.
-    - Descomentar as linhas do `inputs.logparser` , `files = ["/var/log/apache2/access.log"]` , `from_beginning = true` , `inputs.logparser.grok` , `patterns` , `measurement` .
+    - Descomentar as linhas:
+      - `inputs.logparser`
+      - `files = ["/var/log/apache2/access.log"]`
+      - `from_beginning = true`
+      - `inputs.logparser.grok`
+      - `patterns`
+      - `measurement`
 - Reiniciar o serviço do Telegraf `sudo service telegraf restart`.
 - Verificar se o serviço está rodando `sudo service telegraf status`.
 
