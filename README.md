@@ -1,5 +1,5 @@
 # alura-grafana
-Aula da Alura sobre Grafana.
+Curso da Alura sobre Grafana. <https://www.alura.com.br/curso-online-grafana-telegraf-monitoramento>
 
 ![Grafana do Projeto](Grafana.png)
 
